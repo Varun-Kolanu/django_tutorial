@@ -1,0 +1,98 @@
+
+/*About Us*/
+
+.aboutContainer {
+    flex-direction: column;
+    align-items: center;
+}
+
+.teaching img {
+    width: 17%;
+}
+
+
+.boxAbout {
+    padding: 30px;
+}
+
+.aboutText {
+    padding: 0px 45px 27px 45px;
+}
+
+/*Subj-group*/
+
+.subj-group {
+    flex-wrap: wrap;
+}
+
+/*Contact Details*/
+
+.contacting {
+    flex-direction: column;
+}
+
+#Join {
+    width: 100%;
+}
+
+#contact {
+    width: 100%;
+}
+
+.container {
+    height: 300px;
+    border-left: none;
+}
+
+.details {
+    width: 56%;
+    bottom: 3vh;
+    height: 175px;
+}
+
+.h3 {
+    border-top: 2px solid black;
+    border-left: none;
+}
+
+
+
+/*Join Now*/
+
+#form {
+    display: flex;
+}
+
+.navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-list {
+    display: flex;
+    justify-content: center;
+    left: 0vw;
+    position: relative;
+}
+
+.form-group .btn {
+    width: 80px;
+    font-size: 1rem;
+}
+
+#submitter {
+    position: relative;
+    left: 0px;
+    right: 120px;
+}
+
+.list {
+    left: 0px;
+}
+
+/*Copyright*/
+
+.copyright {
+    font-size: 1rem;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{heading}}</h1>
+    {% for item in list %}
+        <div>{{item}}</div>
+    {% endfor %}
+
+    <br/>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Phone No.</th>
+        </tr>
+        {% for item in student_details %}
+            <tr>
+                <td>{{item.name}} </td>
+                <td>{{item.phone}} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br/>
+    {% if numbers|length > 1 %}
+        <div>More than one Numbers Present</div>
+    {% elif numbers|length == 1 %}
+        <div>1 number</div>
+    {% else %}
+        <div>Empty</div>
+    {% endif %}
+
+    <form method="get" action="/userform">
+        <input type="text" name="value1">
+        <input type="text" name="value2">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

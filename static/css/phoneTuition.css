@@ -1,0 +1,98 @@
+/*Navbar adjustment*/
+
+.navbar li a {
+    padding: 2px;
+    font-size: 1rem;
+}
+
+/*Home*/
+
+#home h1 {
+    font-size: 2.8rem;
+    bottom: 11.5vh;
+}
+
+#home p {
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 6.5vh;
+}
+
+.logo img {
+    left: 0px;
+    padding: 5px;
+}
+
+.navbar li {
+    margin: 0px 6px;
+}
+
+#home button {
+    top: -44px;
+}
+
+/*About*/
+
+#about h2 {
+    padding: 0px;
+}
+
+.boxAbout {
+    padding: 0px;
+    margin: 19px 5px;
+}
+
+.aboutText {
+    padding: 0px 0px 20px 0px;
+    top: 12px;
+    margin: 0px;
+}
+
+
+/*Subjects*/
+
+#subjects h2 {
+    margin: 19px 0px;
+    font-size: 2.5rem;
+}
+
+.subj-div,
+#science,
+#social {
+    font-size: 1rem;
+}
+
+
+/*Join Now*/
+
+.form-group {
+    margin: 3px;
+}
+
+.form input {
+    font-size: 0.6rem;
+}
+
+.label {
+    font-size: 1rem;
+}
+
+/*Contact*/
+
+.details {
+    font-size: 0.8rem;
+}
+
+.h3 h3 {
+    margin: 22px 0px;
+}
+
+.secondGroup {
+    width: 120px;
+}
+
+/*Copyright*/
+
+.copyright {
+    font-size: 0.7rem;
+}

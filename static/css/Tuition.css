@@ -1,0 +1,539 @@
+/*CSS Reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*Utility Classes*/
+
+.subjectBox
+{
+    width: 26%;
+    height: 200px;
+    /* border: 3px solid black; */
+    box-shadow: 0 0 20px black;
+    margin: 10px;
+}
+
+.scroll1
+{
+    position: relative;
+    bottom: 65px;
+}
+
+.scroll2
+{
+    position: relative;
+    bottom: 40px;
+}
+
+/*Navigation Bar*/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+}
+
+/*Navigation Bar: Logo*/
+
+.logo img {
+    width: 51px;
+    border-radius: 15px;
+    padding: 6px;
+    position: relative;
+    cursor: pointer;
+    left: 13px;
+    top: 1.4px;
+}
+
+.logo img:hover {
+    transform: scale(1.2);
+}
+
+/*Navigation Bar: List Styling*/
+
+.navbar .list {
+    display: flex;
+}
+
+.div-list
+{
+    position: relative;
+    left: 10.112vw;
+}
+
+.navbar li {
+    list-style: none;
+    margin: 0 16px;
+}
+
+.navbar li a {
+    color: white;
+    display: block;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar li a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.navbar li a:active {
+    text-decoration: underline;
+}
+
+/*Home*/
+
+#home {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 690px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3.5rem;
+    font-family: 'Signika Negative', sans-serif;
+    margin: 3vh 0vw;
+    position: relative;
+    bottom: 5.5vh;
+}
+
+
+#home p {
+    font-size: 1.2rem;
+    margin: 7px 0vw;
+}
+
+#home button {
+    width: 150%;
+    position: relative;
+    top: -9px;
+    font-size: 1rem;
+    font-weight: bold;
+    transform: scale(1.3);
+    background-color: sandybrown;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#home button:hover {
+    transform: scale(1.5);
+    background-color: red;
+}
+
+#home button a {
+    color: black;
+    text-decoration: none;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 5.5vh;
+}
+
+#text {
+    position: relative;
+    bottom: 39px;
+}
+
+#home::before {
+    content: "";
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR6nQ0Y12tFhea32_wnzParlwlfycPhS5YCDuKyY4Q2T3tZ7PshB2c8TXip5K6MorVhhU&usqp=CAU") no-repeat center center/cover;
+    position: absolute;
+    top: -5vh;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/*About Us*/
+#about
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+#about::before
+{
+    content: "";
+    background-color: antiquewhite;
+    position: absolute;
+    top: -5vh;
+    left: 0px;
+    height: 110%;
+    width: 100%;
+    z-index: -1;
+}
+#about h2 {
+    font-size: 3rem;
+    padding: 12px;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+}
+
+.aboutContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.boxAbout img {
+    width: 42%;
+    height: 37%;
+    margin-top: 14px;
+    border-radius: 10px;
+}
+
+.boxAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    /* border: 6px solid red; */
+    box-shadow: 0 0 20px rgb(90, 88, 88);
+    border-radius: 30px;
+    background-color: #f0eee9;
+    padding: 20px;
+    margin: 20px 40px;
+}
+
+.boxAbout:hover {
+    background-color: white;
+    box-shadow: 0 0 30px rgb(90, 88, 88);
+}
+
+.boxAbout h3 {
+    font-size: 2rem;
+    position: relative;
+    bottom: 10px;
+    margin: 5px;
+}
+
+.boxAbout p {
+    display: flex;
+    height: 90%;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -5px;
+    font-size: 1.1rem;
+}
+
+.aboutText
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 27px;
+    margin: 15px;
+}
+
+/*Subjects*/
+
+#subjects {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+#subjects::before {
+    content: "";
+    background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000") center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+#subjects h2 {
+    margin: 45px;
+    font-size: 3rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.subj-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.subj-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 1000;
+    border-radius: 20px;
+}
+
+.subj-div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px black;
+}
+
+#telugu {
+    background: url("https://st.depositphotos.com/50369136/58190/v/600/depositphotos_581909620-stock-illustration-colorful-vector-design-made-telugu.jpg");
+}
+
+#hindi {
+    background: url("https://www.shutterstock.com/image-vector/alphabet-seamless-pattern-sanskrit-hindi-260nw-1791570875.jpg");
+}
+
+#english {
+    background: url("https://media.istockphoto.com/id/1224484742/vector/letters-abstract-background-vector.jpg?s=1024x1024&w=is&k=20&c=4DvGKwBiOnDy25Temo2FOlB7A6AV-M7e0QUDbhl_YPM=");
+}
+
+#maths {
+    color: white;
+    background: url("https://static.vecteezy.com/system/resources/previews/004/194/259/original/doodle-math-objects-border-free-vector.jpg") no-repeat center center/cover;
+}
+
+#science {
+    font-size: 2rem;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpo2Zk7FnJVfdBp3lC5CHzG94fCYWVilOZXw&usqp=CAU");
+}
+
+#social {
+    color: white;
+    font-size: 2rem;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6x896OdcEw7M7MNK-_ueEcFXhnjqy3iviR5BvsjVZrUkwZHMI23_nhc4e0yprNIByeLE&usqp=CAU");
+}
+
+/*Join Now and Contact Us*/
+
+.contacting {
+    display: flex;
+    position: relative;
+    top: 5vh;
+}
+
+.contacting::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url("https://cdn.pixabay.com/photo/2017/12/02/14/38/contact-us-2993000_1280.jpg") no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+/*Join Now*/
+#Join {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form textarea {
+    width: 27vw;
+}
+
+.form input {
+    height: 3vh;
+    width: 27vw;
+    border: 2px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#Join h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 23px;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+}
+
+.h2 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.form-group {
+    margin: 18px;
+}
+
+.form-group .btn {
+    width: 80px;
+    margin: 23px;
+    padding:5px 5px 10px 5px;
+    font-size: 1.2rem;
+    height: 4vh;
+    background-color: #b9b3b3;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.form-group .btn:hover {
+    background-color: grey;
+    transform: scale(1.1);
+}
+
+#submitter {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left:100px;
+}
+
+/*Contact Us*/
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+
+
+.h3 h3 {
+    font-family: 'Fredoka One', cursive;
+    margin: 22px;
+    font-weight: bold;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.h3 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    border-left: 4px solid black;
+}
+
+.container {
+    border-left: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.details:hover {
+    background-color: #d4d3cf;
+    box-shadow: 0 0 50px black;
+}
+
+.details {
+    /* border: 4px solid black; */
+    box-shadow: 0 0 30px black;
+    width: 60%;
+    height: 30%;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 30px;
+    padding: 23px;
+    background-color: #b9b3b3;
+    position: relative;
+    bottom: 13vh;
+}
+
+.details span {
+    font-weight: 1000;
+    font-size: 1.5rem;
+}
+
+/*Copyright*/
+
+.copyright {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    top: 5vh;
+}
+
+marquee {
+    position: relative;
+    z-index: 100;
+    display: block;
+    background-color: grey;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+marquee a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+marquee a:hover {
+    color: blue;
+    text-decoration: underline;
+}

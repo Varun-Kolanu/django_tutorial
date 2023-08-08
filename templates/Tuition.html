@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Learn</title>
+    <link rel="stylesheet" href="/static/css/Tuition.css">
+    <link rel="stylesheet" media="screen and (max-width: 1100px)" href="/static/css/tabletTuition.css">
+    <link rel="stylesheet" media="screen and (max-width: 551px)" href="/static/css/phoneTuition.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Signika+Negative:wght@600&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">
+                <img src="https://icon2.cleanpng.com/20190505/vte/kisspng-vector-graphics-book-stock-illustration-logo-research-vector-book-transparent-amp-png-clipart-5cce8c438f5b02.8433973415570401955872.jpg"
+                    alt="Smart Learn">
+            </a>
+        </div>
+
+        <div class="div-list">
+            <ul class="list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#scroll-about">About Us</a></li>
+                <li><a href="#scroll-subjects">Subjects</a></li>
+                <li><a href="#scroll-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <marquee onmouseover="stop()" onmouseout="start()">
+        {% for news in newsData %}
+        <a href="/newsdetails/{{news.news_slug}}"> {{ news.news_title }} </a> &nbsp; &nbsp;
+        {% endfor %}
+    </marquee>
+    <section>
+        <div id="home">
+            <h1>Welcome to SmartLearn Tuitions</h1>
+            <div class="text">
+                <div id="text">
+                    <p>A place where your child gets guidance and knowledge for a better future</p>
+                </div>
+                <div class="btn">
+                    <button> <a href="#scroll-Join">Join Now</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="scroll-about" class="scroll1"></div>
+    <section>
+        <div id="about">
+            <h2>About Us</h2>
+            <div class="aboutContainer">
+
+
+                <form method="get" action="#about">
+                    <input type="text" name="search" placeholder="Search">
+                </form>
+                {% for row in servicesData %}
+                <div class="teaching {{row.service_icon}}">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSoTqONxeCvJW2wy6aacE2Z24e3_Znr_-h6Q&usqp=CAU"
+                        alt="">
+                    <div class="aboutText">
+                        <h3>{{row.service_title}}</h3>
+                        <p>
+                            {{row.service_desc}}
+                        </p>
+                    </div>
+
+                </div>
+                {% empty %}
+                No Data Found
+                {% endfor %}
+            </div>
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% if servicesData.has_previous %}
+                    <li class="page-item"><a class="page-link" href="/?page=1#about">First</a></li>
+                    <li class="page-item"><a class="page-link" href="/?page={{servicesData.previous_page_number}}#about">Previous</a></li>
+                    {% endif %}
+                    {% for page_num in range %}
+                    <li class="page-item"><a class="page-link" href="/?page={{page_num}}#about">{{page_num}}</a></li>
+                    {% endfor %}
+                    {% if servicesData.has_next %}
+                    <li class="page-item"><a class="page-link" href="/?page={{servicesData.next_page_number}}#about">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="/?page={{totalPages}}#about">Last</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+
+            {% comment %} <div class="aboutContainer">
+                <div class="teaching boxAbout">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSoTqONxeCvJW2wy6aacE2Z24e3_Znr_-h6Q&usqp=CAU"
+                        alt="">
+                    <div class="aboutText">
+                        <h3>Teaching</h3>
+                        <p>Our experienced and qualified teaching faculty guides your child for their growth in every
+                            aspect
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="care boxAbout">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNC1r4RvLzxg3U3eYBzq2sKKz4ADNaXgXHw&usqp=CAU"
+                        alt="">
+                    <div class="aboutText">
+                        <h3>Care</h3>
+                        <p>All Students are given equal importance and care. No neglecting! : &rpar;</p>
+                    </div>
+                </div>
+
+                <div class="quiz boxAbout">
+                    <img src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/google-quiz.jpg?width=595&height=400&name=google-quiz.jpg"
+                        alt="">
+                    <div class="aboutText">
+                        <h3>Quizzes</h3>
+                        <p>Daily Quizzes enhances your child's performance, speed and accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </section>
+
+    <div id="scroll-subjects" class="scroll1"></div>
+    <section id="subjects">
+        <h2>Subjects we teach:</h2>
+        <div class="subj-group">
+            <div class="subj-div subjectBox" id="telugu">Telugu</div>
+            <div class="subj-div subjectBox" id="hindi">Hindi</div>
+            <div class="subj-div subjectBox" id="english">English</div>
+            <div class="subj-div subjectBox" id="maths">Mathematics</div>
+            <div class="subj-div subjectBox" id="science">Science</div>
+            <div class="subj-div subjectBox" id=social>Social</div>
+        </div>
+    </section>
+
+    <section>
+        <div class="contacting">
+
+            <div id="scroll-Join" class="scroll2">
+            </div>
+            <div id="Join">
+                <div class="h2">
+                    <h2>Join Now</h2>
+                </div>
+
+                <div class="form">
+                    <form action="/savecontact/" method="post" id="form">
+                        {% csrf_token %}
+                        <div class="firstGroup">
+                            <div class="form-group">
+                                <label for="fname" class="label">Name: </label>
+                                <br>
+                                <input type="text" id="fname" name="name" placeholder="eg., Varun">
+                                <br>
+                            </div>
+
+                        </div>
+
+                        <div class="secondGroup">
+
+                            <div class="form-group">
+                                <label for="phone" class="label">Mobile No.:</label>
+                                <br>
+                                <input type="text" id="phone" name="mobile" placeholder="Enter your Mobile no.">
+                                <br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="label">Email:</label>
+                                <br>
+                                <input type="email" id="email" name="email" placeholder="Enter your Email-id">
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="label">Message(optional):</label>
+                                <br>
+                                <textarea name="message" id="message" cols="10" rows="10"></textarea>
+                                <br>
+                            </div>
+
+                            <div class="form-group" id="submitter">
+                                <input type="submit" class="btn">
+                                <input type="reset" class="btn">
+                            </div>
+                        </div>
+                        {% if n %}
+                        <p> {{n}} </p>
+                        {% endif %}
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="scroll-contact" class="scroll2"></div>
+            <div id="contact">
+                <div class="h3">
+                    <h3>Contact Us</h3>
+                </div>
+                <div class="container">
+                    <div class="details">
+                        <span>Mobile No.:</span>
+                        9603138312 / 7396058070.
+                        <br><br>
+                        <span>Email us at:</span>
+                        kolanuvarun739@gmail.com
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="copy">
+        <div class="copyright">
+            Copyright &copy; 2023 SmartLearn. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
